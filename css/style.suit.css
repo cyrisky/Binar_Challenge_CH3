@@ -1,0 +1,95 @@
+html,
+
+body {
+    background-color: #9C835F;
+}
+
+h1 {
+    color: #F9B23D;
+    font-size: 1.8rem;
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    padding: 0.65rem 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.button:focus {
+    background-color: #C4C4C4;
+    padding: 0.65rem 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 1.8rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin: 2vh;
+    margin-bottom: 4vh;
+}
+
+.flex-header-item {
+    padding: 1vw;
+}
+
+.computerSkill {
+    padding: 0.65rem 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.computerSkillSelected {
+    background-color: #C4C4C4;
+    padding: 0.65rem 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 1.8rem;
+}
+
+.versus {
+    font-size: 4rem;
+    color: #BD0000;
+    font-weight: 800;
+    width: 10rem;
+    text-align: center;
+    padding: 0.65rem;
+}
+
+.results {
+    background-color: #4C9654;
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    width: 10rem;
+    text-align: center;
+    padding: 0.65rem;
+    transform: rotate(-30deg);
+}
+
+.refresh {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
