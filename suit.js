@@ -16,27 +16,46 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 }))
 
 // Pilihan Computer
+// baru
+class computerSkill {
+    constructor (compItem) {
+        this.compChoice = compItem
+    }
+    pilihBatu() {
+        computerChoice = "batu"
+        batuComputerDisplay.setAttribute('class','computerSkillSelected')
+        guntingComputerDisplay.setAttribute('class','computerSkill')
+        kertasComputerDisplay.setAttribute('class','computerSkill')
+    }
+    pilihKertas() {
+        computerChoice = "kertas"
+        batuComputerDisplay.setAttribute('class','computerSkill')
+        guntingComputerDisplay.setAttribute('class','computerSkill')
+        kertasComputerDisplay.setAttribute('class','computerSkillSelected')
+    }
+    pilihGunting() {
+        computerChoice = "gunting"
+        batuComputerDisplay.setAttribute('class','computerSkill')
+        guntingComputerDisplay.setAttribute('class','computerSkillSelected')
+        kertasComputerDisplay.setAttribute('class','computerSkill')
+    }
+}
+
 function generateComputerChoice() {
     const randomNumber = Math.floor(Math.random() * possibleChoices.length)
     console.log(randomNumber)
 
     if (randomNumber === 0) {
-        computerChoice = 'batu'
-        batuComputerDisplay.setAttribute('class','computerSkillSelected')
-        guntingComputerDisplay.setAttribute('class','computerSkill')
-        kertasComputerDisplay.setAttribute('class','computerSkill')
+        let batu = new computerSkill("batu")
+        batu.pilihBatu()
     }
     if (randomNumber === 1) {
-        computerChoice = 'kertas'
-        kertasComputerDisplay.setAttribute('class','computerSkillSelected')
-        batuComputerDisplay.setAttribute('class','computerSkill')
-        guntingComputerDisplay.setAttribute('class','computerSkill')
+        let kertas = new computerSkill("kertas")
+        kertas.pilihKertas()
     }
     if (randomNumber === 2) {
-        computerChoice = 'gunting'
-        guntingComputerDisplay.setAttribute('class','computerSkillSelected')
-        batuComputerDisplay.setAttribute('class','computerSkill')
-        kertasComputerDisplay.setAttribute('class','computerSkill')
+        let gunting = new computerSkill("gunting")
+        gunting.pilihGunting()
     }
 }
 
