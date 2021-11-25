@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "cris",
+    "password": "12345",
+    "database": "challenge_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "cris",
+    "password": "12345",
+    "database": "challenge_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "cris",
+    "password": "12345",
+    "database": "challenge_prod",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

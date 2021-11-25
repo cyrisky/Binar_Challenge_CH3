@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 8000
+const bodyparser = require("body-parser")
 
 app.set('view engine','ejs')
 
@@ -13,6 +14,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 app.use(logger)
 app.use('/assets', express.static('assets'))
+app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({extended: true}))
 
 const router = require('./router')
 app.use(router)
