@@ -1,9 +1,25 @@
 const express = require('express')
 const app = express()
-const port = 8000
-const bodyparser = require("body-parser")
+const session = require('express-session')
+const flash = require('express-flash')
+const { port = 8000 } = process.env
 
-app.set('view engine','ejs')
+
+app.use(express.urlencoded({ extended: false }))
+
+app.use(session({
+    secret: 'challengecris',
+    resave: false,
+    saveUninitialized: false
+}))
+
+const passport = require('./lib/passportJwt')
+app.use(passport.initialize())
+app.use(passport.session())
+
+app.use(flash())
+
+app.set('view engine', 'ejs')
 
 // middleware
 const logger = (req, res, next) => {
@@ -11,16 +27,13 @@ const logger = (req, res, next) => {
     next()
 }
 app.use(express.json())
-app.use(express.urlencoded({ extended: false}))
 app.use(logger)
 app.use('/assets', express.static('assets'))
-app.use(bodyparser.json())
-app.use(bodyparser.urlencoded({extended: true}))
 
-const router = require('./router')
+const router = require('./routes')
 app.use(router)
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     console.error(err)
     res.status(500).json({
         status: 'fail',
